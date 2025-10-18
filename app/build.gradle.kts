@@ -1,3 +1,4 @@
+println("[Build LifeCycle] build.gradle init")
 
 plugins {
     application
@@ -27,6 +28,13 @@ application {
 
 tasks.named<Test>("test") {
     useJUnitPlatform()
+
+    doLast {
+        println("[Build LifeCycle] test task")
+    }
+
+    finalizedBy("testBoth")
+
 }
 //예시 1: build/libs 밑 .war를 target으로 복사하고 싶다
 tasks.register<Copy>("copyTask") {
@@ -63,4 +71,20 @@ publishing {
             from(components["java"])//java 플러그인이 만들어주는 기본 산출물들을 포함
         }
     }
+}
+
+
+tasks.register("configured") {
+    println("[Build LifeCycle] configured task")
+}
+
+
+tasks.register("testBoth") {
+    doFirst {
+        println("[Build LifeCycle] testBoth task first")
+    }
+    doLast {
+        println("[Build LifeCycle] testBoth task last")
+    }
+    println("[Build LifeCycle] testBoth task init")
 }

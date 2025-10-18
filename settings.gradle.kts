@@ -4,3 +4,4 @@ plugins {
 
 rootProject.name = "gradle-study"
 include("app")
+println("[Build LifeCycle] setting.gradle init")
