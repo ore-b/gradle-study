@@ -1,6 +1,8 @@
 
 plugins {
     application
+    //gradle 에서 관리하는, 메이븐 배포 플러그인
+    id("maven-publish")
 }
 
 repositories {
@@ -8,9 +10,9 @@ repositories {
 }
 
 dependencies {
-    testImplementation(libs.junit.jupiter)
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-    implementation(libs.guava)
+    testImplementation(libs.junit.jupiter)//버전 카탈로그
+    implementation(libs.guava)//버전 카탈로그
 }
 
 java {
@@ -46,4 +48,19 @@ tasks.register("greet") {
         println("How are you?")
     }
     dependsOn("hello")            // greet 실행 전에 hello 반드시 실행
+}
+
+publishing {
+    publications {
+        //“퍼블리케이션을 하나라도 정의”하면
+        // 그 퍼블리케이션을 만들고 배포하기 위한 하위 태스크들을 자동으로 생성
+        create<MavenPublication>("maven") {
+            //메이븐 설정값 지정
+            groupId = "com.gradle.tutorial"
+            artifactId = "tutorial"
+            version = "1.0"
+
+            from(components["java"])//java 플러그인이 만들어주는 기본 산출물들을 포함
+        }
+    }
 }
