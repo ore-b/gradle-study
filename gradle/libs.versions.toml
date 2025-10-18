@@ -1,0 +1,12 @@
+[versions]
+guava = "32.1.2-jre"
+slf4j = "2.0.13"
+junit = "5.10.2"
+
+[libraries]
+guava = { group = "com.google.guava", name = "guava", version.ref = "guava" }
+slf4j = { group = "org.slf4j", name = "slf4j-api", version.ref = "slf4j" }
+junit = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junit" }
+
+[bundles]
+default = ["guava", "slf4j", "junit"]
