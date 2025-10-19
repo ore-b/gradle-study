@@ -1,5 +1,8 @@
 println("[Build LifeCycle] build.gradle init")
 
+val val1 = "val1 is ttt";
+val springVersion by extra("3.1.0.RELEASE")
+
 plugins {
     application
     //gradle 에서 관리하는, 메이븐 배포 플러그인
@@ -33,7 +36,7 @@ tasks.named<Test>("test") {
         println("[Build LifeCycle] test task")
     }
 
-    finalizedBy("testBoth")
+    finalizedBy("hello")
 
 }
 //예시 1: build/libs 밑 .war를 target으로 복사하고 싶다
@@ -45,9 +48,20 @@ tasks.register<Copy>("copyTask") {
 }
 
 
+
 tasks.register("hello") {
-    doLast {                      // 태스크 실행 단계의 '마지막에' 할 일 추가
-        println("Hello!")
+
+    val ver = springVersion;
+    val val1 = val1;
+    val taskName = name;
+    val projectName = project.name;
+    val rootProjectName = project.rootProject.name;
+
+    doLast {
+        println("Hello!" + ver + val1)
+        println("taskName is " + taskName)
+        println("projectName is " + projectName)
+        println("rootProjectName is " + rootProjectName)
     }
 }
 
