@@ -3,6 +3,7 @@ plugins {
     id("application")
     id("org.example.greeting")
     id("org.example.myTask")
+    id("org.example.licenseFile")
 }
 
 group = "kr.co.oreb"

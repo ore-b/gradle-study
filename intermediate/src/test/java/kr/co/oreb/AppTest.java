@@ -1,4 +1,12 @@
-package kr.co.oreb;
+/*
+ * 라이선스 내용 블라블라~
+ *//*
+ * 라이선스 내용 블라블라~
+ *//*
+ * 라이선스 내용 블라블라~
+ *//*
+ * 라이선스 내용 블라블라~
+ */package kr.co.oreb;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

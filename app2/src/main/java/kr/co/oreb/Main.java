@@ -1,4 +1,12 @@
-package kr.co.oreb;
+/*
+ * 라이선스 내용 블라블라~
+ *//*
+ * 라이선스 내용 블라블라~
+ *//*
+ * 라이선스 내용 블라블라~
+ *//*
+ * 라이선스 내용 블라블라~
+ */package kr.co.oreb;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.

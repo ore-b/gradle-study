@@ -66,6 +66,14 @@ gradlePlugin {// 커스텀 플러그인 정의
         //플러그인 구현 클래스
         implementationClass = "org.example.MyPlugin"
     }
+
+    val licenseFileTask by plugins.creating {
+
+        //플러그인 ID 정의
+        id = "org.example.licenseFile"
+        //플러그인 구현 클래스
+        implementationClass = "org.example.LicenseFilePlugin"
+    }
 }
 
 gradlePlugin.testSourceSets.add(sourceSets["functionalTest"])
