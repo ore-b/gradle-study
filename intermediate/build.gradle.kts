@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    id("application")
 }
 
 group = "kr.co.oreb"
@@ -13,10 +14,15 @@ dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    implementation(project(":lib"))//lib 모듈 의존성 추가
 }
 
 tasks.test {
     useJUnitPlatform()
+}
+
+application {
+    mainClass = "kr.co.oreb.App"
 }
 
 //빌드 싸이클, ./gradlew task1
