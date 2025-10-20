@@ -1,6 +1,8 @@
 plugins {
     id("java")
     id("application")
+    id("org.example.greeting")
+    id("org.example.myTask")
 }
 
 group = "kr.co.oreb"
