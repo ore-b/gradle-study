@@ -16,3 +16,4 @@ include("lib")
 println("[Build LifeCycle] setting.gradle init")
 
 includeBuild("gradle/license-plugin")
+includeBuild("binary-plugin")

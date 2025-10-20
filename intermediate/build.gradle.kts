@@ -5,6 +5,7 @@ plugins {
     id("org.example.myTask")
     id("org.example.licenseFile")
     id("myproject.java-conventions")
+    id("org.example.filesizediff")
 }
 
 group = "kr.co.oreb"
@@ -19,6 +20,12 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     implementation(project(":lib"))//lib 모듈 의존성 추가
+}
+
+diff {
+    // Property 타입이므로 set(...) 사용
+    file1.set(file("a.txt"))
+    file2.set(file("b.txt"))
 }
 
 tasks.test {
